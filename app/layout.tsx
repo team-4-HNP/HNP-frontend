@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "HNP AI",
-    template: "%s · HNP AI",
+    default: "StayMate",
+    template: "%s · StayMate",
   },
   description:
     "AI-powered stays that fit your taste — plus matchmaking to split accommodations and save.",

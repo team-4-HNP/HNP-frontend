@@ -1,4 +1,4 @@
-# HNP AI (frontend)
+# StayMate (frontend)
 
 Skeleton Next.js app for preference-aware travel recommendations and accommodation matchmaking.
 
