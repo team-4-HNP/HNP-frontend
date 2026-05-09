@@ -104,3 +104,26 @@ Released under the [MIT License](LICENSE).
 <p align="center">
   <strong>StayMate AI</strong> — <em>Travel better, pay less, stay together.</em>
 </p>
+Copy `.env.example` to `.env.local` when you start wiring auth, APIs, or OpenAI.
+
+## Deploy (Vercel)
+
+No backend or secrets are required for the current skeleton. Optional later: set `NEXT_PUBLIC_APP_URL` to your production URL.
+
+### Import from Git (recommended)
+
+1. Push this repo to GitHub / GitLab / Bitbucket.
+2. In [Vercel](https://vercel.com), choose **Add New… → Project** and import the repository.
+3. Leave defaults: **Framework Preset: Next.js**, **Root Directory:** `./` (repository root with `package.json`).
+4. Add environment variables only when you add APIs or auth; none needed now.
+5. **Deploy**. Production URL appears after the build succeeds.
+
+### CLI
+
+```bash
+npx vercel login
+npx vercel            # preview deployment
+npx vercel --prod     # production
+```
+
+CI/non-interactive: create a token under Vercel **Account Settings → Tokens**, then `VERCEL_TOKEN=... npx vercel --prod --yes` from this directory (project linking uses `.vercel/`, which is gitignored).
