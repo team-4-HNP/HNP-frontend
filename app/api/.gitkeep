@@ -1,0 +1,2 @@
+# Reserve `app/api` for Route Handlers.
+# Future: POST /api/transcribe (Whisper or compatible STT).
