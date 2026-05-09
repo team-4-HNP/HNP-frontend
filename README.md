@@ -4,6 +4,9 @@
 
 StayMate AI is a specialized travel platform built to eliminate the friction of solo travel. We've replaced the traditional, tedious "manual scrolling" experience with a voice-and-text intelligent concierge and a secure matchmaking system for cost-sharing.
 
+YouTube Demo:
+https://youtu.be/mk_OV765gGQ
+
 ---
 
 ## 🛠️ Core Solutions
