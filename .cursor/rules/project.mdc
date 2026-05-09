@@ -1,0 +1,41 @@
+---
+description: Project context and conventions. Always applied.
+globs:
+alwaysApply: true
+---
+
+# {{PROJECT_NAME}}
+
+## project
+- description: {{PROJECT_DESCRIPTION}}
+- stack: {{STACK}}
+- deployment: {{DEPLOYMENT_PLATFORM}}
+- type: {{SOLO_OR_TEAM}}
+
+## folder structure
+```
+{{FOLDER_STRUCTURE}}
+```
+
+## run / develop
+- dev server: {{DEV_COMMAND}}
+- tests: {{TEST_COMMAND}}
+- lint + types: {{LINT_COMMAND}}
+
+## conventions
+- {{LIST_KEY_CONVENTIONS}}
+- no comments by default — only where logic would be genuinely hard to follow without one
+- simplify and modularize over clever or dense solutions
+- conventional commits: feat:, fix:, refactor:, test:, chore:
+
+## architecture decisions
+<!--
+Document significant choices here as you make them. Format:
+- chose X over Y (date): reason
+-->
+
+## rules
+- never commit without running lint and the full test suite first
+- if a task touches more than 3 files or requires a new dependency, write a plan first
+- no raw external input stored or returned without validation
+- ai-generated code touching auth or user data is reviewed by hand before being accepted

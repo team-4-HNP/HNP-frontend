@@ -21,6 +21,15 @@ async function mockAssistantReply(prompt: string): Promise<string> {
   return template;
 }
 
+function getNamedFormInput(
+  form: HTMLFormElement,
+  name: string,
+): HTMLInputElement | null {
+  const node = form.elements.namedItem(name);
+  const candidate = node instanceof RadioNodeList ? node.item(0) : node;
+  return candidate instanceof HTMLInputElement ? candidate : null;
+}
+
 export function ChatPanel() {
   const scrollAnchorRef = useRef<HTMLDivElement>(null);
   const [messages, setMessages] = useState<ChatMessage[]>([
@@ -28,7 +37,7 @@ export function ChatPanel() {
       id: "welcome",
       role: "assistant",
       content:
-        "Hi — I'm your HNP AI concierge (demo mode). Tell me what kind of trip you're imagining.",
+        "Hi — I'm your StayMate concierge (demo mode). Tell me what kind of trip you're imagining.",
     },
   ]);
 
@@ -56,7 +65,8 @@ export function ChatPanel() {
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const form = event.currentTarget;
-    const field = form.elements.namedItem("message") as HTMLInputElement;
+    const field = getNamedFormInput(form, "message");
+    if (!field) return;
     const text = field.value.trim();
     if (!text || mutation.isPending) return;
     field.value = "";
